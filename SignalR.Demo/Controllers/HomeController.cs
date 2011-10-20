@@ -37,5 +37,10 @@ namespace SignalR.Demo.Controllers
         {
             return View();
         }
+
+        public ActionResult GoogleDesktopAlertsIntegration()
+        {
+            return View();
+        }
     }
 }
