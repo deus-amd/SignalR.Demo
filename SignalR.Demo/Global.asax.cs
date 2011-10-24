@@ -24,7 +24,7 @@ namespace SignalR.Demo
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             //routes.MapConnection<ServerTimeConnection>("clock", "{controller}/clock/{*operation}");
-            routes.MapConnection<EchoConnection>("echo", "echo/{*operation}");
+            routes.MapConnection<EchoConnection>("echo", "Home/echo/{*operation}");
 
             routes.MapRoute(
                 "Default", // Route name

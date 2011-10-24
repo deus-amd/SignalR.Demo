@@ -42,5 +42,10 @@ namespace SignalR.Demo.Controllers
         {
             return View();
         }
+
+        public ActionResult EchoConnection()
+        {
+            return View();
+        }
     }
 }

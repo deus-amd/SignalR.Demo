@@ -10,7 +10,7 @@ namespace SignalR.ConsoleClient
     {
         static void Main(string[] args)
         {
-            var connection = new Connection("http://localhost:2329/echo");
+            var connection = new Connection("http://localhost:2329/Home/echo");
             connection.Received += data =>
                 {
                     Console.WriteLine(data);
