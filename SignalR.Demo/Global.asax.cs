@@ -8,37 +8,39 @@ using SignalR.Demo.Controllers;
 using SignalR.Routing;
 using NHQS;
 using GeoCheckin.DataAccess;
+using SignalR.Demo.Connections;
 
 namespace SignalR.Demo
 {
-	public class MvcApplication : System.Web.HttpApplication
-	{
-		public static void RegisterGlobalFilters(GlobalFilterCollection filters)
-		{
-			filters.Add(new HandleErrorAttribute());
-		}
+    public class MvcApplication : System.Web.HttpApplication
+    {
+        public static void RegisterGlobalFilters(GlobalFilterCollection filters)
+        {
+            filters.Add(new HandleErrorAttribute());
+        }
 
-		public static void RegisterRoutes(RouteCollection routes)
-		{
-			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+        public static void RegisterRoutes(RouteCollection routes)
+        {
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-			//routes.MapConnection<ServerTimeConnection>("clock", "{controller}/clock/{*operation}");
+            //routes.MapConnection<ServerTimeConnection>("clock", "{controller}/clock/{*operation}");
+            routes.MapConnection<EchoConnection>("echo", "echo/{*operation}");
 
-			routes.MapRoute(
-				"Default", // Route name
-				"{controller}/{action}/{id}", // URL with parameters
-				new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
-			);
+            routes.MapRoute(
+                "Default", // Route name
+                "{controller}/{action}/{id}", // URL with parameters
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+            );
 
-		}
+        }
 
-		protected void Application_Start()
-		{
+        protected void Application_Start()
+        {
             SessionFactoryContainer.Current.Add(new SQLiteSessionFactoryCreator().Create());
 
-			AreaRegistration.RegisterAllAreas();
-			RegisterGlobalFilters(GlobalFilters.Filters);
-			RegisterRoutes(RouteTable.Routes);
-		}
-	}
+            AreaRegistration.RegisterAllAreas();
+            RegisterGlobalFilters(GlobalFilters.Filters);
+            RegisterRoutes(RouteTable.Routes);
+        }
+    }
 }
