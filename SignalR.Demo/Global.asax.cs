@@ -23,15 +23,18 @@ namespace SignalR.Demo
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            //routes.MapConnection<ServerTimeConnection>("clock", "{controller}/clock/{*operation}");
-            routes.MapConnection<EchoConnection>("echo", "Home/echo/{*operation}");
+            routes.MapConnection<EchoConnection>("echo", "echo/{*operation}");
 
             routes.MapRoute(
-                "Default", // Route name
-                "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+                "Default",
+                "{controller}/{action}/{id}",
+                new 
+                { 
+                    controller = "Home", 
+                    action = "Index", 
+                    id = UrlParameter.Optional 
+                }
             );
-
         }
 
         protected void Application_Start()

@@ -16,5 +16,5 @@ C:\SRC\SignalR.Demo\SignalR.Demo\bin\NHQS.dll
 C:\SRC\SignalR.Demo\SignalR.Demo\bin\System.Data.SQLite.DLL
 C:\SRC\SignalR.Demo\SignalR.Demo\bin\GeoCheckin.DataAccess.pdb
 C:\SRC\SignalR.Demo\SignalR.Demo\bin\GeoCheckin.Domain.pdb
-C:\src\SignalR.Demo\SignalR.Demo\bin\EntityFramework.dll
-C:\src\SignalR.Demo\SignalR.Demo\bin\SignalR.dll
+C:\SRC\SignalR.Demo\SignalR.Demo\bin\EntityFramework.dll
+C:\SRC\SignalR.Demo\SignalR.Demo\bin\SignalR.dll
